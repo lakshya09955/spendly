@@ -1,7 +1,0 @@
-class person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-
-p1 = person("Alice", 30)
-print(f"Name: {p1.name}, Age: {p1.age}")
