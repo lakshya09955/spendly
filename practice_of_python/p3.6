@@ -1,0 +1,32 @@
+# Program to remove duplicates from a list using a set
+
+def remove_duplicates(numbers):
+    """Return a new list with duplicates removed, preserving original order."""
+    seen = set()
+    result = []
+    for n in numbers:
+        if n not in seen:
+            seen.add(n)
+            result.append(n)
+    return result
+
+
+def main():
+    # accept input as space-separated numbers
+    text = input("Enter numbers separated by spaces: ")
+    if not text.strip():
+        print("No numbers provided.")
+        return
+    try:
+        nums = [int(x) for x in text.split()]
+    except ValueError:
+        print("Please enter only integers.")
+        return
+
+    unique = remove_duplicates(nums)
+    print("Original list:", sorted(nums))
+    print("Without duplicates:", sorted(unique))
+
+
+if __name__ == "__main__":
+    main()
